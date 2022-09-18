@@ -3,7 +3,7 @@ package guru.springframework.spring5_03_recipe.domain;
 import javax.persistence.*;
 
 @Entity
-public class Notes {
+public class Note {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

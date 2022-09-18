@@ -8,6 +8,37 @@
 
 <h1>My Recipes</h1>
 
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="recipe : ${recipes}">
+        <td th:text="${recipe.id}">Some id</td>
+        <td th:text="${recipe.description}">Some description</td>
+    </tr>
+</table>
+
+<div th:each="recipe : ${recipes}">
+    <h3 th:text="${recipe.description}">Recipe description</h3>
+    <ul>
+        <li th:text="${recipe.difficulty}"></li>
+        <li th:text="'Prep time: ' + ${recipe.prepTime} + ' min'"></li>
+        <li th:text="'Cook time: ' + ${recipe.cookTime} + ' min'"></li>
+        <li th:text="${recipe.directions}"></li>
+    </ul>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Ingredient</th>
+        </tr>
+        <tr th:each="ingredient : ${recipe.ingredients}">
+            <td th:text="${ingredient.id}"></td>
+            <td th:text="${ingredient.amount} + ' ' + ${ingredient.uom.description} + ' ' + ${ingredient.description}"></td>
+        </tr>
+    </table>
+</div>
 
 </body>
 </html>
