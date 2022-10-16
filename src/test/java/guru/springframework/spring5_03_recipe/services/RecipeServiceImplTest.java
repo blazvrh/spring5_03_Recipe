@@ -29,11 +29,6 @@ class RecipeServiceImplTest {
         recipeService = new RecipeServiceImpl(recipeRepository);
     }
 
-    @AfterEach
-    void tearDown() throws Exception {
-        closeable.close();
-    }
-
     @Test
     void getRecipes() {
         Recipe recipe = new Recipe();
